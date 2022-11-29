@@ -8,7 +8,7 @@ const DYTE_ORG_ID = process.env.DYTE_ORG_ID!;
 
 if (!DYTE_API_KEY || !DYTE_ORG_ID) {
   throw new Error(
-    'Samples: DYTE_API_KEY and DYTE_ORG_ID environment variables have not been set'
+    '❌ Backend Sample: DYTE_API_KEY and DYTE_ORG_ID environment variables have not been set'
   );
 }
 

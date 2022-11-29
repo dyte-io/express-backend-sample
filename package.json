@@ -1,10 +1,10 @@
 {
-  "name": "@dytesdk/backend-sample",
+  "name": "@dytesdk/api-client",
   "version": "0.0.1",
   "description": "",
   "main": "./dist/index.js",
   "bin": {
-    "dyte-api-server": "./dist/index.js"
+    "dyte-api-client": "./dist/index.js"
   },
   "scripts": {
     "start": "node dist/index.js",
