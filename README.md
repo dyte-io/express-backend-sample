@@ -4,19 +4,19 @@
     <img src="https://assets.dyte.io/logo-outlined.png" alt="Logo" width="120">
   </a>
 
-  <h3 align="center">Backend Sample</h3>
+  <h3 align="center">Express Backend Sample</h3>
 
   <p align="center">
-    A NodeJS backend to interact with the Dyte REST API
+    An ExpressJS backend sample to interact with Dyte's REST API.
     <br />
     <a href="https://docs.dyte.io"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://app.dyte.io">View Demo</a>
     ·
-    <a href="https://github.com/dyte-io/backend-sample/issues">Report Bug</a>
+    <a href="https://github.com/dyte-io/express-backend-sample/issues">Report Bug</a>
     ·
-    <a href="https://github.com/dyte-io/backend-sample/issues">Request Feature</a>
+    <a href="https://github.com/dyte-io/express-backend-sample/issues">Request Feature</a>
   </p>
 </p>
 
@@ -25,31 +25,14 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [About The Project](#about-the-project)
-  - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-- [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [Support](#support)
 - [License](#license)
 - [About](#about)
-
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
-
-This is a sample backend application which interacts with the REST API.
-
-### Built With
-
-- [NodeJS](https://nodejs.org/en/)
-- [ExpressJS](https://expressjs.com/)
-- [Dyte Rest API](https://docs.dyte.io/api/)
-
-<!-- GETTING STARTED -->
 
 ## Getting Started
 
@@ -69,7 +52,7 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo
 
 ```sh
-git clone https://github.com/dyte-io/backend-sample.git
+git clone https://github.com/dyte-io/express-backend-sample.git
 ```
 
 2. Install NPM packages
@@ -102,37 +85,89 @@ npm start
 
 ## Usage
 
-The backend exposes an express API server with the following routes:
+The APIs in this sample actually the v2 API route structure, and returns the
+response returned from the respective v2 API.
 
-<!-- TODO -->
+Here are the APIs used in this sample:
 
-<!-- ROADMAP -->
+- [Create a meeting](#create-a-meeting)
+- [Add a participant to a meeting](#add-a-participant-to-a-meeting)
+- [Fetch all presets](#fetch-all-presets)
 
-## Roadmap
+### Create a Meeting
 
-See the [open issues](https://github.com/dyte-in/backend-sample-app/issues) for a list of proposed features (and known issues).
+| Method | Route       |
+| ------ | ----------- |
+| `POST` | `/meetings` |
 
-<!-- CONTRIBUTING -->
+Creates a meeting in your organization.
+
+Request body schema:
+
+```js
+z.object({
+  title: z.string().optional(),
+});
+```
+
+[Reference](https://docs.dyte.io/api/?v=v2#/operations/create_meeting)
+
+### Add a participant to a meeting
+
+| Method | Route                               |
+| ------ | ----------------------------------- |
+| `POST` | `/meetings/:meetingId/participants` |
+
+Adds a participant to a specific meeting.
+
+Request body schema:
+
+```js
+z.object({
+  name: z.string(),
+  picture: z.string().optional(),
+  preset_name: z.string(),
+});
+```
+
+[Reference](https://docs.dyte.io/api/?v=v2#/operations/add_participant)
+
+### Fetch all presets
+
+| Method | Route      |
+| ------ | ---------- |
+| `GET`  | `/presets` |
+
+Fetches all preset names in your organization.
+
+[Reference](https://docs.dyte.io/api/?v=v2#/operations/get-presets)
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**. Sincere thanks to all our contributors. Thank you, [contributors](https://github.com/dyte-io/backend-sample/graphs/contributors)!
+Contributions are what make the open source community such an amazing place to
+be learn, inspire, and create. Any contributions you make are **greatly
+appreciated**. Sincere thanks to all our contributors. Thank you,
+[contributors](https://github.com/dyte-io/expressbackend-sample/graphs/contributors)!
 
-You are requested to follow the contribution guidelines specified in [CONTRIBUTING.md](./.github/CONTRIBUTING.md) and code of conduct at [CODE_OF_CONDUCT.md](./.github/CODE_OF_CONDUCT.md) while contributing to the project :smile:.
+You are requested to follow the contribution guidelines specified in
+[CONTRIBUTING.md](./.github/CONTRIBUTING.md) and code of conduct at
+[CODE_OF_CONDUCT.md](./.github/CODE_OF_CONDUCT.md) while contributing to the
+project :smile:.
 
 ## Support
 
-Contributions, issues, and feature requests are welcome!
-Give a ⭐️ if you like this project!
-
-<!-- LICENSE -->
+Contributions, issues, and feature requests are welcome! Give a ⭐️ if you like
+this project!
 
 ## License
 
-Distributed under the Apache License, Version 2.0. See [`LICENSE`](./LICENSE) for more information.
+Distributed under the Apache License, Version 2.0. See [`LICENSE`](./LICENSE)
+for more information.
 
 ## About
 
-`backend-sample` is created & maintained by Dyte, Inc. You can find us on Twitter - [@dyte_io](https://twitter.com/dyte_io) or write to us at `dev [at] dyte.io`.
-The names and logos for Dyte are trademarks of Dyte, Inc.
-We love open source software! See [our other projects](https://github.com/dyte-io) and [our products](https://dyte.io).
+`express-backend-sample` is created & maintained by Dyte, Inc. You can find us
+on Twitter - [@dyte_io](https://twitter.com/dyte_io) or write to us at
+`dev [at] dyte.io`. The names and logos for Dyte are trademarks of Dyte, Inc. We
+love open source software! See [our other projects](https://github.com/dyte-io)
+and [our products](https://dyte.io).
