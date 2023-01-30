@@ -7,7 +7,7 @@
   <h3 align="center">Express Backend Sample</h3>
 
   <p align="center">
-    An ExpressJS backend sample to interact with Dyte's REST API.
+    An ExpressJS backend sample to interact with Dyte's REST API. Can also be used as an executable.
     <br />
     <a href="https://docs.dyte.io"><strong>Explore the docs »</strong></a>
     <br />
@@ -24,7 +24,6 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -35,10 +34,6 @@
 - [About](#about)
 
 ## Getting Started
-
-Deploy directly to heroku using this button!
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 To get a local copy up and running follow these simple steps.
 
@@ -87,6 +82,21 @@ npm start
 
 The APIs in this sample actually the v2 API route structure, and returns the
 response returned from the respective v2 API.
+
+To proceed with this guide, make sure you've already created an account at
+https://dev.dyte.io and you've created a preset for participants you're going to
+be adding to meetings via the
+[preset editor](https://dev.dyte.io/roles-presets).
+
+You can use the `authToken` you create from this sample in all our other SDKs,
+such as:
+
+https://github.com/dyte-io/react-samples
+
+- [react-samples](https://github.com/dyte-io/react-samples)
+- [angular-samples](https://github.com/dyte-io/angular-samples)
+- [html-samples](https://github.com/dyte-io/html-samples)
+- [electron-samples](https://github.com/dyte-io/electron-samples)
 
 Here are the APIs used in this sample:
 
@@ -141,6 +151,19 @@ z.object({
 Fetches all preset names in your organization.
 
 [Reference](https://docs.dyte.io/api/?v=v2#/operations/get-presets)
+
+## Using as an executable
+
+To make development easier, you can also use this sample as an npm executable!
+
+Just make sure you have your environment variables in a `.env` file, and then
+simply run:
+
+```sh
+npx @dytesdk/api-client
+```
+
+This will start a development server without needing to clone this repository.
 
 ## Contributing
 
