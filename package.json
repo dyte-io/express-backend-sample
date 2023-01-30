@@ -1,7 +1,7 @@
 {
   "name": "@dytesdk/api-client",
   "version": "0.1.0",
-  "description": "",
+  "description": "An express backend sample for Dyte, also provided as an executable.",
   "main": "./dist/index.js",
   "bin": {
     "dyte-api-client": "./dist/index.js"
