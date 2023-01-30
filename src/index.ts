@@ -33,6 +33,7 @@ app.listen(PORT, () => {
 
       `💻 Local:   http://localhost:${PORT}`,
       ...(IP_ADDRESS ? [`🌐 Network: http://${IP_ADDRESS}:${PORT}`] : []),
+      '',
     ].join('\n')
   );
 });
